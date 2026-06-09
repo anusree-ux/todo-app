@@ -8,6 +8,7 @@
 
 <body>
     <h1>My Todo List</h1>
+
     <h3>🚀 Deployed at: <%= deployTime %>
     </h3>
 
@@ -19,14 +20,25 @@
     <ul>
         <% tasks.forEach((task, index)=> { %>
             <li>
-                <%= task %>
+                <span style="<%= task.done ? 'text-decoration: line-through; color: gray;' : '' %>">
+                    <%= task.text %>
+                </span>
 
-                    <form action="/delete/<%= index %>" method="POST" style="display:inline;">
-                        <button type="submit">Delete</button>
-                    </form>
+                <!-- Toggle Done / Undo -->
+                <form action="/toggle/<%= index %>" method="POST" style="display:inline;">
+                    <button type="submit">
+                        <%= task.done ? "Undo" : "Done" %>
+                    </button>
+                </form>
+
+                <!-- Delete -->
+                <form action="/delete/<%= index %>" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
             </li>
             <% }) %>
     </ul>
+
 </body>
 
 </html>
