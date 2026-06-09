@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+    width: 500px;
+    margin: 40px auto;
+}
+
+input {
+    padding: 8px;
+    width: 300px;
+}
+
+button {
+    padding: 8px;
+}
+
+li {
+    margin: 10px 0;
+}
