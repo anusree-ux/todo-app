@@ -12,7 +12,7 @@ pipeline {
         stage('Run Container') {
             steps {
                 sh 'docker rm -f todo-app || true'
-                sh 'docker run -d -p 3000:3000 --name todo-app todo-app'
+                sh 'docker run -d -p 127.0.0.1:2999:3000 --name todo-app todo-app'
             }
         }
     }
